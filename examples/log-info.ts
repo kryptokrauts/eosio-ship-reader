@@ -10,10 +10,18 @@ const run = async () => {
   }, 250)
 
   blocks$.subscribe(({ actions, table_rows, block_id }) =>
-    console.log(`${JSON.stringify({ block_id, actions: actions?.length, table_rows: table_rows?.length })} \n`),
+    console.log(
+      `${JSON.stringify({
+        block_id,
+        actions: actions?.length,
+        table_rows: table_rows?.length,
+      })} \n`,
+    ),
   )
 
-  log$.subscribe(({ message }) => console.log(message, `nodeos head_block_num ${info.head_block_num}`))
+  log$.subscribe(({ message }) =>
+    console.log(message, `nodeos head_block_num ${info.head_block_num}`),
+  )
 
   close$.subscribe(() => console.log('connection closed'))
 }

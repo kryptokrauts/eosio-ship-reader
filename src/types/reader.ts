@@ -5,7 +5,12 @@ import { StaticPool } from 'node-worker-threads-pool'
 import PQueue from 'p-queue'
 import WebSocket from 'ws'
 import { EosioTypes } from './eosio'
-import { EosioShipRequest, ShipActionReceiptData, ShipTableDeltaName, ShipTransactionTrace } from './ship'
+import {
+  EosioShipRequest,
+  ShipActionReceiptData,
+  ShipTableDeltaName,
+  ShipTransactionTrace,
+} from './ship'
 
 export type EosioReaderState = {
   chain_id: string | null
